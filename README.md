@@ -3,7 +3,8 @@ This minimal bundle allows you to quickly define console commands that can be ei
 commands or actual shell commands.
 
 ### Installation
-`composer require kdauzickas/console-alias`
+1. Run `composer require kdauzickas/console-alias`
+2. Add `new KD\Console\AliasBundle\KDConsoleAliasBundle()` to `$bundles` in your `AppKernel`
 
 ### Configuration
 Commands are created from what is defined in your `config.yml`. Configuration shoud be done in the manner shown below.
@@ -21,7 +22,6 @@ kd_console_alias:
                 - arguments
                 - to be passed
                 - to the command
-
 ```
 Example:
 ```
@@ -36,12 +36,12 @@ kd_console_alias:
                 - text
                 - cleancode,codesize,controversial,design,naming,unusedcode
 
-        list:
-            name: "alias:list"
-            description: Alias of the list symfony command
-            command: list
+        config:
+            name: "c:d"
+            description: Alias of the config:debug symfony command
+            command: "config:debug"
             console: true
 ```
 This will allow you to run a command `app/console pmd` that will execute 
-`bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode`. Command `app/console alias:list` 
-will execute `app/console list`
+`bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode`. Command `app/console c:d` 
+will execute `app/console config:debug`

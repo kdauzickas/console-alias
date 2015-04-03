@@ -43,6 +43,7 @@ class ConfigurableCommand extends Command
 
         if ($this->configuration['console']) {
             $command = $this->getApplication()->find($this->configuration['command']);
+            array_unshift($args, $this->configuration['command']);
 
             return $command->run(new ArrayInput($args), $output);
         }
