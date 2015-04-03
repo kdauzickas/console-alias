@@ -1,0 +1,25 @@
+{
+    "name": "kdauzickas/console-alias",
+    "description": "Helper to quickly define aliases for commands",
+    "require": {
+        "php": ">=5.3",
+        "symfony/symfony": "~2.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpmd/phpmd": "~2.2",
+        "sebastian/phpcpd": "~2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karolis Daužickas",
+            "email": "karolis@dauzickas.lt"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KD\\Console\\AliasBundle\\": ""
+        }
+    }
+}
